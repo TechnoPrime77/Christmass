@@ -88,7 +88,7 @@ body {
   position: absolute;
   inset: 8px;
   background: #ffffff;
-  padding: 18px 16px 60px;
+  padding: 18px 16px 40px;
   border-radius: 8px;
   opacity: 0;
   transform: translateY(30px) scale(0.96);
@@ -127,19 +127,6 @@ p {
   opacity: 1;
 }
 
-/* Close button */
-.close {
-  position: absolute;
-  bottom: 10px;
-  right: 12px;
-  background: rgba(0,0,0,0.05);
-  border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  font-size: 18px;
-}
-
 /* Hint */
 .hint {
   position: absolute;
@@ -165,7 +152,6 @@ p {
   <div class="flap"></div>
 
   <div class="letter" onclick="event.stopPropagation()">
-    <button class="close" onclick="closeLetter(event)">×</button>
 
     <h1>Dear Ria,</h1>
 
@@ -179,15 +165,17 @@ No matter the distance or the time, it’s still you.
 Just having you in my life means more than I can explain,
 and every moment with you truly matters to me.
     </p>
+
     <p>
       Christmas feels different this year, warmer somehow — and I know it’s because of you.
       You’ve become my favorite quiet miracle, the kind that arrives gently and stays,
-      changing everything without making a sound.You're the greatest gift i got this year❤️..
+      changing everything without making a sound. You're the greatest gift I got this year ❤️.
     </p>
+
     <p>
-      Sometimes i catch myself smiling for no reason
-and yeah it’s usually because of you....
-Talking to you is lowkey the best part of my day...
+      Sometimes I catch myself smiling for no reason
+      and yeah it’s usually because of you....
+      Talking to you is lowkey the best part of my day...
       Even small conversations with you mean more than they should.
       U mean the world to meeeee....
     </p>
@@ -196,17 +184,13 @@ Talking to you is lowkey the best part of my day...
       You are my greatest blessing and my happiest memory. 
       Your love has brought so much light into my life,
       and your presence has given me a sense of peace I never knew was possible. 
-      Thank you for loving me, for believing in
-      me, and for being my
-      partner in this beautiful
-      journey of life.
+      Thank you for loving me, for believing in me,
+      and for being my partner in this beautiful journey of life.
       I’m not perfect, and I never will be,
       but I’ll love you endlessly — now and forever.
     </p>
 
-    <p>
-      Merry Christmassss!!!❤️.
-    </p>
+    <p>Merry Christmassss!!! ❤️</p>
 
     <div class="love-line">I love you ❤️</div>
 
@@ -239,7 +223,7 @@ function fadeInMusic() {
   }, 120);
 }
 
-/* 📩 Open letter */
+/* 📩 Open letter (ONLY opens, never closes) */
 envelope.addEventListener('click', () => {
   if (!envelope.classList.contains('open')) {
     envelope.classList.add('open');
@@ -252,14 +236,6 @@ envelope.addEventListener('click', () => {
   }
 });
 
-/* ❌ Close letter */
-function closeLetter(e) {
-  e.stopPropagation();
-  envelope.classList.remove('open');
-  music.pause();
-  musicBtn.textContent = '▶ Music';
-}
-
 /* 🔊 Manual toggle */
 function toggleMusic() {
   if (music.paused) {
@@ -271,7 +247,7 @@ function toggleMusic() {
   }
 }
 
-/* ❄️ Generate snow */
+/* ❄️ Snow */
 for (let i = 0; i < 35; i++) {
   const snow = document.createElement("div");
   snow.className = "snow";
